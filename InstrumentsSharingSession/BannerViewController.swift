@@ -13,12 +13,21 @@ class BannerViewController: UIViewController {
     let collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 0
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.isPagingEnabled = true
         return collectionView
     }()
     
-    let backgroundView = UIView()
+    let backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleToFill
+        return view
+    }()
+    
     let banners = Banner.defaultBanners
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +89,41 @@ extension BannerViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
     }
-    
+}
+
+extension BannerViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let newIndex = Int((scrollView.contentOffset.x / scrollView.bounds.width).rounded(.down))
+        guard newIndex != currentIndex else { return }
+        currentIndex = newIndex
+//        backgroundView.image = banners[currentIndex].image.blurEffect()
+        
+        DispatchQueue.global().async {
+                  let image = self.banners[self.currentIndex].image.blurEffect()
+                  DispatchQueue.main.async {
+                      self.backgroundView.image = image
+                  }
+              }
+    }
+}
+
+extension UIImage {
+    func blurEffect() -> UIImage {
+        let currentFilter = CIFilter(name: "CIGaussianBlur")
+        let beginImage = CIImage(image: self)!
+        currentFilter!.setValue(beginImage, forKey: kCIInputImageKey)
+        currentFilter!.setValue(20, forKey: kCIInputRadiusKey)
+
+        let cropFilter = CIFilter(name: "CICrop")
+        cropFilter!.setValue(currentFilter!.outputImage, forKey: kCIInputImageKey)
+        cropFilter!.setValue(CIVector(cgRect: beginImage.extent), forKey: "inputRectangle")
+
+        let output = cropFilter!.outputImage
+        let context = CIContext()
+        let cgimg = context.createCGImage(output!, from: output!.extent)
+        let processedImage = UIImage(cgImage: cgimg!)
+        return processedImage
+    }
+
 }
 
