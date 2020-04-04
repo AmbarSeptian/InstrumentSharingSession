@@ -9,7 +9,7 @@
 import UIKit
 
 class BannerViewController: UIViewController {
-
+    
     let collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -17,23 +17,44 @@ class BannerViewController: UIViewController {
         return collectionView
     }()
     
+    let backgroundView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView: do {
             view.backgroundColor = .white
+            backgroundView.backgroundColor = .red
             view.addSubview(collectionView)
         }
         
         setupConstraints: do {
             collectionView.translatesAutoresizingMaskIntoConstraints = false
+            backgroundView.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-               collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-               collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-               collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-               collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-           ])
+                backgroundView.topAnchor
+                    .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                constant: 20),
+                backgroundView.widthAnchor
+                    .constraint(equalTo: view.widthAnchor),
+                backgroundView.centerXAnchor
+                    .constraint(equalTo: view.centerXAnchor),
+                backgroundView.heightAnchor
+                    .constraint(equalTo: backgroundView.widthAnchor,
+                                multiplier: 2/3),
+
+                collectionView.topAnchor
+                    .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                constant: 40),
+                collectionView.widthAnchor
+                    .constraint(equalTo: view.widthAnchor),
+                collectionView.centerXAnchor
+                    .constraint(equalTo: view.centerXAnchor),
+                collectionView.heightAnchor
+                    .constraint(equalTo: collectionView.widthAnchor,
+                                multiplier: 1/3)
+            ])
         }
         
         collectionView: do {
