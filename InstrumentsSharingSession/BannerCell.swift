@@ -10,13 +10,19 @@ import UIKit
 
 class BannerCell: UICollectionViewCell {
     
-    let imageView = UIImageView()
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView: do {
-            imageView.contentMode = .scaleAspectFill
+            backgroundColor = .clear
             addSubview(imageView)
         }
         
@@ -25,15 +31,23 @@ class BannerCell: UICollectionViewCell {
             
             NSLayoutConstraint.activate([
                 imageView.topAnchor
-                    .constraint(equalTo: topAnchor,constant: 20),
-                imageView.widthAnchor
-                    .constraint(equalTo: widthAnchor),
-                imageView.centerXAnchor
-                    .constraint(equalTo: centerXAnchor),
+                    .constraint(equalTo: topAnchor),
+                imageView.leadingAnchor
+                    .constraint(equalTo: leadingAnchor, constant: 20),
+                imageView.trailingAnchor
+                    .constraint(equalTo: trailingAnchor, constant: -20),
                 imageView.bottomAnchor
                     .constraint(equalTo: bottomAnchor)
             ])
         }
+        
+        setupShadow: do {
+            imageView.layer.shadowColor = UIColor.black.cgColor
+            imageView.layer.shadowOpacity = 0.12
+            imageView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            imageView.layer.shadowRadius = 4
+        }
+
     }
     
     required init?(coder: NSCoder) {
