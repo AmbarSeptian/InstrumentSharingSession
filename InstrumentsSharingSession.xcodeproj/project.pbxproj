@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		E59572BE2439047E00FB1421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572BD2439047E00FB1421 /* AppDelegate.swift */; };
 		E59572C02439047E00FB1421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572BF2439047E00FB1421 /* SceneDelegate.swift */; };
-		E59572C22439047E00FB1421 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572C12439047E00FB1421 /* ViewController.swift */; };
+		E59572C22439047E00FB1421 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572C12439047E00FB1421 /* BannerViewController.swift */; };
 		E59572C52439047E00FB1421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59572C32439047E00FB1421 /* Main.storyboard */; };
 		E59572C72439048100FB1421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59572C62439048100FB1421 /* Assets.xcassets */; };
 		E59572CA2439048100FB1421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59572C82439048100FB1421 /* LaunchScreen.storyboard */; };
+		E59572D22439090D00FB1421 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572D12439090D00FB1421 /* BannerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E59572BA2439047E00FB1421 /* InstrumentsSharingSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstrumentsSharingSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59572BD2439047E00FB1421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E59572BF2439047E00FB1421 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E59572C12439047E00FB1421 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E59572C12439047E00FB1421 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		E59572C42439047E00FB1421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E59572C62439048100FB1421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E59572C92439048100FB1421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E59572CB2439048100FB1421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59572D12439090D00FB1421 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				E59572BD2439047E00FB1421 /* AppDelegate.swift */,
 				E59572BF2439047E00FB1421 /* SceneDelegate.swift */,
-				E59572C12439047E00FB1421 /* ViewController.swift */,
+				E59572C12439047E00FB1421 /* BannerViewController.swift */,
+				E59572D12439090D00FB1421 /* BannerCell.swift */,
 				E59572C32439047E00FB1421 /* Main.storyboard */,
 				E59572C62439048100FB1421 /* Assets.xcassets */,
 				E59572C82439048100FB1421 /* LaunchScreen.storyboard */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E59572C22439047E00FB1421 /* ViewController.swift in Sources */,
+				E59572C22439047E00FB1421 /* BannerViewController.swift in Sources */,
+				E59572D22439090D00FB1421 /* BannerCell.swift in Sources */,
 				E59572BE2439047E00FB1421 /* AppDelegate.swift in Sources */,
 				E59572C02439047E00FB1421 /* SceneDelegate.swift in Sources */,
 			);
