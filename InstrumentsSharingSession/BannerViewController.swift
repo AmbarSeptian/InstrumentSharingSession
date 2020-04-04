@@ -18,13 +18,14 @@ class BannerViewController: UIViewController {
     }()
     
     let backgroundView = UIView()
+    let banners = Banner.defaultBanners
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView: do {
             view.backgroundColor = .white
-            backgroundView.backgroundColor = .red
+            view.addSubview(backgroundView)
             view.addSubview(collectionView)
         }
         
@@ -67,11 +68,13 @@ class BannerViewController: UIViewController {
 
 extension BannerViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return banners.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
+        cell.bind(banners[indexPath.item])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

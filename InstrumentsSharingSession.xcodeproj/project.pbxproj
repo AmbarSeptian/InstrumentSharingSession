@@ -14,6 +14,7 @@
 		E59572C72439048100FB1421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59572C62439048100FB1421 /* Assets.xcassets */; };
 		E59572CA2439048100FB1421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59572C82439048100FB1421 /* LaunchScreen.storyboard */; };
 		E59572D22439090D00FB1421 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572D12439090D00FB1421 /* BannerCell.swift */; };
+		E59572D424390BF600FB1421 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572D324390BF600FB1421 /* Banner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E59572C92439048100FB1421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E59572CB2439048100FB1421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E59572D12439090D00FB1421 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		E59572D324390BF600FB1421 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				E59572BD2439047E00FB1421 /* AppDelegate.swift */,
 				E59572BF2439047E00FB1421 /* SceneDelegate.swift */,
 				E59572C12439047E00FB1421 /* BannerViewController.swift */,
+				E59572D324390BF600FB1421 /* Banner.swift */,
 				E59572D12439090D00FB1421 /* BannerCell.swift */,
 				E59572C32439047E00FB1421 /* Main.storyboard */,
 				E59572C62439048100FB1421 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				E59572C22439047E00FB1421 /* BannerViewController.swift in Sources */,
 				E59572D22439090D00FB1421 /* BannerCell.swift in Sources */,
+				E59572D424390BF600FB1421 /* Banner.swift in Sources */,
 				E59572BE2439047E00FB1421 /* AppDelegate.swift in Sources */,
 				E59572C02439047E00FB1421 /* SceneDelegate.swift in Sources */,
 			);
