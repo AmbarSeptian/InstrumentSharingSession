@@ -1,0 +1,6 @@
+framework module Pods_InstrumentsSharingSession {
+  umbrella header "Pods-InstrumentsSharingSession-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - FPSCounter (4.0.1)
+
+DEPENDENCIES:
+  - FPSCounter (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - FPSCounter
+
+SPEC CHECKSUMS:
+  FPSCounter: 262ec30f9f5a2fd7843b593ea80016fece7c809c
+
+PODFILE CHECKSUM: c9627e0f616c80dda5acb59508c514b432b09a0f
+
+COCOAPODS: 1.8.4

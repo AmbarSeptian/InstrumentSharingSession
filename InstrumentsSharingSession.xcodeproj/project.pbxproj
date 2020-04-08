@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98A73E15CB8710186B6A992A /* Pods_InstrumentsSharingSession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFF4188E50A157107A3D588 /* Pods_InstrumentsSharingSession.framework */; };
 		E59572BE2439047E00FB1421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572BD2439047E00FB1421 /* AppDelegate.swift */; };
 		E59572C02439047E00FB1421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572BF2439047E00FB1421 /* SceneDelegate.swift */; };
 		E59572C22439047E00FB1421 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59572C12439047E00FB1421 /* BannerViewController.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		407F7E73099A4E161EEE0B06 /* Pods-InstrumentsSharingSession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstrumentsSharingSession.debug.xcconfig"; path = "Target Support Files/Pods-InstrumentsSharingSession/Pods-InstrumentsSharingSession.debug.xcconfig"; sourceTree = "<group>"; };
+		6C35A26AD18F767860125EA4 /* Pods-InstrumentsSharingSession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstrumentsSharingSession.release.xcconfig"; path = "Target Support Files/Pods-InstrumentsSharingSession/Pods-InstrumentsSharingSession.release.xcconfig"; sourceTree = "<group>"; };
+		8DFF4188E50A157107A3D588 /* Pods_InstrumentsSharingSession.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstrumentsSharingSession.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59572BA2439047E00FB1421 /* InstrumentsSharingSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstrumentsSharingSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59572BD2439047E00FB1421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E59572BF2439047E00FB1421 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A73E15CB8710186B6A992A /* Pods_InstrumentsSharingSession.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CF5E7092D144085A50A5CB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF4188E50A157107A3D588 /* Pods_InstrumentsSharingSession.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3D0FD363EED1A571B070E3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				407F7E73099A4E161EEE0B06 /* Pods-InstrumentsSharingSession.debug.xcconfig */,
+				6C35A26AD18F767860125EA4 /* Pods-InstrumentsSharingSession.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E59572B12439047E00FB1421 = {
 			isa = PBXGroup;
 			children = (
 				E59572BC2439047E00FB1421 /* InstrumentsSharingSession */,
 				E59572BB2439047E00FB1421 /* Products */,
+				B3D0FD363EED1A571B070E3E /* Pods */,
+				0CF5E7092D144085A50A5CB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E59572CE2439048100FB1421 /* Build configuration list for PBXNativeTarget "InstrumentsSharingSession" */;
 			buildPhases = (
+				0325C0D77E74FBA7E392E655 /* [CP] Check Pods Manifest.lock */,
 				E59572B62439047E00FB1421 /* Sources */,
 				E59572B72439047E00FB1421 /* Frameworks */,
 				E59572B82439047E00FB1421 /* Resources */,
+				408E9202CF6032ACB9C95583 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0325C0D77E74FBA7E392E655 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstrumentsSharingSession-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		408E9202CF6032ACB9C95583 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstrumentsSharingSession/Pods-InstrumentsSharingSession-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstrumentsSharingSession/Pods-InstrumentsSharingSession-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstrumentsSharingSession/Pods-InstrumentsSharingSession-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E59572B62439047E00FB1421 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		E59572CF2439048100FB1421 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 407F7E73099A4E161EEE0B06 /* Pods-InstrumentsSharingSession.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		E59572D02439048100FB1421 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C35A26AD18F767860125EA4 /* Pods-InstrumentsSharingSession.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
